@@ -1,44 +1,76 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio | Miguel Moura</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Miguel Moura</h1>
-    <p>Estudante de Engenharia de Software - CEUB</p>
-  </header>
+# 🧑‍💻 Portfólio Profissional – Miguel Moura
 
-  <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <p>
-      Olá! Eu sou o Miguel Moura, estudante de Engenharia de Software no Centro Universitário de Brasília (CEUB).
-      Tenho interesse em desenvolvimento de software, tecnologia e estou sempre buscando aprender novas ferramentas
-      e linguagens para me tornar um profissional completo.
-    </p>
-  </section>
+**Estudante de Engenharia de Software | CEUB**  
+📍 Brasília, DF  
+📧 filemoura@sempreceub.com  
+🔗 [LinkedIn](https://linkedin.com/in/miguel-moura)  
+💻 [GitHub](https://github.com/abraaofmedeiros/gestor_despesas_pessoais)
 
-  <section id="projetos">
-    <h2>Projetos</h2>
-    <div class="projeto">
-      <h3>Gestor de Despesas Pessoais</h3>
-      <p>Aplicação em Python para controle de gastos pessoais.</p>
-      <a href="https://github.com/miguelmoura/gestor_despesas_pessoais" target="_blank">Ver no GitHub</a>
-    </div>
-    <!-- Adicione mais projetos abaixo seguindo o mesmo padrão -->
-  </section>
+---
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Email: <a href="mailto:file.moura@gmail.com">miguelmoura@gmail.com</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/file_moura" target="_blank">@file_moura</a></p>
-  </section>
+## 👨‍🎓 Perfil Pessoal
 
-  <footer>
-    <p>&copy; 2025 Miguel Moura</p>
-  </footer>
-</body>
-</html>
+Sou Miguel, estudante de Engenharia de Software no CEUB. Me interesso por desenvolvimento de software e tecnologias inovadoras.
+
+Tenho conhecimento em **Lua** e **Python**, e participei de cursos diversos como leilões, Airbnb, marketing digital e mercado financeiro.  
+Gosto de aprender na prática, contribuir com ideias e me envolver em projetos desafiadores.
+
+---
+
+## 🛠️ Habilidades Técnicas
+
+- Python  
+- Lua  
+- Google Workspace  
+- Organização de projetos  
+- Comunicação e trabalho em equipe  
+
+---
+
+## 💼 Projeto: Gestor de Despesas Pessoais
+
+Projeto prático de software para controle financeiro pessoal.
+
+**Funcionalidades:**
+- Registro de despesas
+- Categorização por tipo (ex: Alimentação, Transporte)
+- Relatórios financeiros
+
+**Tecnologia usada:** Python  
+🔗 Repositório: [github.com/abraaofmedeiros/gestor_despesas_pessoais](https://github.com/abraaofmedeiros/gestor_despesas_pessoais)
+
+### 🧾 Exemplo de Código:
+
+```python
+import csv
+
+def adicionar_despesa():
+    descricao = input("Descrição: ")
+    valor = input("Valor: ")
+    categoria = input("Categoria: ")
+    with open("despesas.csv", mode="a", newline="") as arquivo:
+        writer = csv.writer(arquivo)
+        writer.writerow([descricao, valor, categoria])
+    print("Despesa adicionada com sucesso!")
+
+def listar_despesas():
+    try:
+        with open("despesas.csv", mode="r") as arquivo:
+            reader = csv.reader(arquivo)
+            for row in reader:
+                print(f"{row[0]} - R$ {row[1]} ({row[2]})")
+    except FileNotFoundError:
+        print("Nenhuma despesa registrada ainda.")
+
+if __name__ == "__main__":
+    while True:
+        print("\n1. Adicionar Despesa\n2. Listar Despesas\n3. Sair")
+        opcao = input("Escolha: ")
+        if opcao == "1":
+            adicionar_despesa()
+        elif opcao == "2":
+            listar_despesas()
+        elif opcao == "3":
+            break
+        else:
+            print("Opção inválida.")
