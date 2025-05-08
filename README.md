@@ -38,39 +38,3 @@ Projeto prático de software para controle financeiro pessoal.
 
 **Tecnologia usada:** Python  
 🔗 Repositório: [github.com/abraaofmedeiros/gestor_despesas_pessoais](https://github.com/abraaofmedeiros/gestor_despesas_pessoais)
-
-### 🧾 Exemplo de Código:
-
-```python
-import csv
-
-def adicionar_despesa():
-    descricao = input("Descrição: ")
-    valor = input("Valor: ")
-    categoria = input("Categoria: ")
-    with open("despesas.csv", mode="a", newline="") as arquivo:
-        writer = csv.writer(arquivo)
-        writer.writerow([descricao, valor, categoria])
-    print("Despesa adicionada com sucesso!")
-
-def listar_despesas():
-    try:
-        with open("despesas.csv", mode="r") as arquivo:
-            reader = csv.reader(arquivo)
-            for row in reader:
-                print(f"{row[0]} - R$ {row[1]} ({row[2]})")
-    except FileNotFoundError:
-        print("Nenhuma despesa registrada ainda.")
-
-if __name__ == "__main__":
-    while True:
-        print("\n1. Adicionar Despesa\n2. Listar Despesas\n3. Sair")
-        opcao = input("Escolha: ")
-        if opcao == "1":
-            adicionar_despesa()
-        elif opcao == "2":
-            listar_despesas()
-        elif opcao == "3":
-            break
-        else:
-            print("Opção inválida.")
